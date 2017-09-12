@@ -56,6 +56,7 @@ public class SecondActivity extends AppCompatActivity{
                     selectedAnswers[saveCount] = getIdRb();
                     mCountable++;
                     saveCount++;
+                    radioGroup.clearCheck();
 
 
                 } else {
@@ -70,9 +71,7 @@ public class SecondActivity extends AppCompatActivity{
                     thirdIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     thirdIntent.putExtra(KEY_RES,sovp);
                     startActivity(thirdIntent);
-                    Toast toast = Toast.makeText(getApplicationContext(),
-                            Arrays.toString(selectedAnswers), Toast.LENGTH_SHORT);
-                    toast.show();
+
                 }
             }
         });

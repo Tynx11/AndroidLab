@@ -22,7 +22,7 @@ public class ThirdActivity extends AppCompatActivity {
         Button button = (Button) findViewById(R.id.repeat);
         textView = (TextView) findViewById(R.id.result);
         int count = getIntent().getIntExtra(KEY,0);
-        textView.setText(String.valueOf(count) + " / " + getResources().getStringArray(R.array.right_answers) );
+        textView.setText(String.valueOf(count) + " / " + getResources().getStringArray(R.array.right_answers).length );
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

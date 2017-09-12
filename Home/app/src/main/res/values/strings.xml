@@ -1,4 +1,5 @@
 <resources>
+    <string name="next">Дальше</string>
     <string name="Start">Начать</string>
     <string name="You_a_welcome">Добро пожаловать</string>
     <string name="app_name">Тест на умность</string>
