@@ -4,6 +4,10 @@
     <string name="You_a_welcome">Добро пожаловать</string>
     <string name="app_name">Тест на умность</string>
     <string name="repeat">Повторить</string>
+    <string name="exit">Выйти</string>
+    <string name="share">Поделиться</string>
+    <string name="dialog_positive">Да</string>
+    <string name="dialog_negative">Нет</string>
     <string-array name="questions">
         <item>22+10= ?</item>
         <item>16+5= ?</item>

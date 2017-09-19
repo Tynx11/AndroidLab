@@ -13,12 +13,22 @@
         android:layout_height="wrap_content" />
 
     <Button
-        android:text="@string/repeat"
         android:id="@+id/repeat"
+
+        android:text="@string/repeat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"/>
+        android:layout_alignParentLeft="true"
+        android:layout_margin="8dp"/>
+    <Button
+        android:id="@+id/exit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/exit"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="8dp"/>
 
 
 </RelativeLayout>
