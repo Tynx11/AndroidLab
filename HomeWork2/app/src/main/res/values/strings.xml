@@ -1,0 +1,96 @@
+<resources>
+    <string name="next">next</string>
+    <string name="Start">Let\'s GO!</string>
+    <string name="You_a_welcome">Welcome!</string>
+    <string name="app_name">Brain test</string>
+    <string name="repeat">Repeat test</string>
+    <string name="exit">Exit</string>
+    <string name="share">Share</string>
+    <string name="dialog_positive">Yes</string>
+    <string name="dialog_negative">No</string>
+    <string-array name="questions">
+        <item>22+10= ?</item>
+        <item>16+5= ?</item>
+        <item>160+31= ?</item>
+        <item>3+3= ?</item>
+        <item>8+3= ?</item>
+        <item>16*1</item>
+        <item>2*2*2= ?</item>
+        <item>4+9= ?</item>
+        <item>5*5= ?</item>
+        <item>7*9= ?</item>
+    </string-array>
+
+    <string-array name="answers0">
+        <item>22</item>
+        <item>32</item>
+        <item>113</item>
+    </string-array>
+
+    <string-array name="answers1">
+        <item>111</item>
+        <item>41</item>
+        <item>21</item>
+    </string-array>
+
+    <string-array name="answers2">
+        <item>190</item>
+        <item>191</item>
+        <item>192</item>
+    </string-array>
+
+    <string-array name="answers3">
+        <item>1</item>
+        <item>6</item>
+        <item>10</item>
+    </string-array>
+
+    <string-array name="answers4">
+        <item>2</item>
+        <item>11</item>
+        <item>8</item>
+    </string-array>
+
+    <string-array name="answers5">
+        <item>1</item>
+        <item>16</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="answers6">
+        <item>8</item>
+        <item>16</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="answers7">
+        <item>13</item>
+        <item>4</item>
+        <item>9</item>
+    </string-array>
+
+    <string-array name="answers8">
+        <item>5</item>
+        <item>1</item>
+        <item>25</item>
+    </string-array>
+
+    <string-array name="answers9">
+        <item>63</item>
+        <item>1</item>
+        <item>62</item>
+    </string-array>
+
+    <integer-array name="right_answers">
+        <item>2</item>
+        <item>3</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>2</item>
+        <item>1</item>
+        <item>1</item>
+        <item>3</item>
+        <item>1</item>
+    </integer-array>
+</resources>
