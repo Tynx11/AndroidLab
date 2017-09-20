@@ -41,14 +41,17 @@ public class AlertDialogExit extends DialogFragment implements DialogInterface.O
             case DialogInterface.BUTTON_POSITIVE:
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
+                // TODo в стринги
                 sendIntent.putExtra(Intent.EXTRA_TEXT, "Я очень умный "+ "ответил на " + a+
                         " вопросов из "+ b + ". Попробуй повтори. "
                         + "отправлено из самодельного android приложения"
                         + "\n"+ uri);
+                // TODO в константы
                 sendIntent.setType("text/plain");
                 startActivity(sendIntent);
                 break;
             case DialogInterface.BUTTON_NEGATIVE:
+                // TODO диалог можно закрыть с помощью  getFragmentManager().beginTransaction().remove(this).commit()
                 android.os.Process.killProcess(android.os.Process.myPid());
                 break;
         }

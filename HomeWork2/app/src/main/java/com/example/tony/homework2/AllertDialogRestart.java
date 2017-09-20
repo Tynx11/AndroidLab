@@ -16,6 +16,7 @@ import android.view.View;
 
 public class AllertDialogRestart extends DialogFragment implements DialogInterface.OnClickListener{
 
+    // TODO в стринги
     private Uri uri = Uri.parse("https://vk.com/id2675106033");
     private int a;
     private int b;
@@ -41,13 +42,16 @@ public class AllertDialogRestart extends DialogFragment implements DialogInterfa
             case DialogInterface.BUTTON_POSITIVE:
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
+                // TODO в стринги
                 sendIntent.putExtra(Intent.EXTRA_TEXT, "Я очень умный "+ "ответил на " + a+
                         " вопросов из "+ b + ". Попробуй повтори. " + "отправлено из самодельного android приложения"
                         + "\n" + uri);
+                // TODO в строки
                 sendIntent.setType("text/plain");
                 startActivity(sendIntent);
                 break;
             case DialogInterface.BUTTON_NEGATIVE:
+                // TODO новая активность а не replace fragment'a
                 getFragmentManager()
                         .beginTransaction()
                         .replace(R.id.fragment_container,SecondFragment.newInstance(0,0,new int[getResources().getIntArray(R.array.right_answers).length]))

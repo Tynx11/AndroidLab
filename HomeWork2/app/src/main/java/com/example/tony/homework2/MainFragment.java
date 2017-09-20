@@ -17,8 +17,8 @@ public class MainFragment extends Fragment {
     private Button start;
 
     public static MainFragment newInstance(String str) {
-
         Bundle args = new Bundle();
+        // TODO в константы
         args.putString("key",str);
         MainFragment fragment = new MainFragment();
         fragment.setArguments(args);
@@ -39,6 +39,7 @@ public class MainFragment extends Fragment {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // TODO тут должна создаваться новая активность(second), а не происходить replace фрагмента
                 getFragmentManager()
                         .beginTransaction()
                         .replace(R.id.fragment_container,SecondFragment.newInstance(0,0,new int[getResources().getIntArray(R.array.right_answers).length]))
