@@ -50,7 +50,7 @@ public class AlertDialogExit extends DialogFragment implements DialogInterface.O
                 startActivity(sendIntent);
                 break;
             case DialogInterface.BUTTON_NEGATIVE:
-                android.os.Process.killProcess(android.os.Process.myPid());
+                getFragmentManager().beginTransaction().remove(this).commit();
                 break;
         }
     }

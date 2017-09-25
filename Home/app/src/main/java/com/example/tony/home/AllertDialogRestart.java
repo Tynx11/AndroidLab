@@ -8,7 +8,9 @@ import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.view.LayoutInflater;
 import android.view.View;
 
@@ -17,6 +19,7 @@ import android.view.View;
  */
 
 public class AllertDialogRestart extends DialogFragment implements DialogInterface.OnClickListener{
+
 
     private Uri uri = Uri.parse("https://vk.com/id2675106033");
     private int a;
@@ -36,6 +39,7 @@ public class AllertDialogRestart extends DialogFragment implements DialogInterfa
                 .create();
     }
 
+
     @Override
     public void onClick(DialogInterface dialogInterface, int i) {
 
@@ -50,10 +54,11 @@ public class AllertDialogRestart extends DialogFragment implements DialogInterfa
                 startActivity(sendIntent);
                 break;
             case DialogInterface.BUTTON_NEGATIVE:
-                getFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragment_container,SecondFragment.newInstance(0,0,new int[getResources().getIntArray(R.array.right_answers).length]))
-                        .commit();
+                Intent intent = new Intent(getContext(),MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                        .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+
         }
     }
     public void onBackPressed(){

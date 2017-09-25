@@ -18,9 +18,10 @@ public class SecondActivity extends FragmentHostActivity{
 
 
 
+
     @Override
     protected Fragment getFragment() {
-        return SecondFragment.newInstance(0,0,null);
+        return SecondFragment.newInstance(0,0,new int[getResources().getIntArray(R.array.right_answers).length]);
     }
 
 

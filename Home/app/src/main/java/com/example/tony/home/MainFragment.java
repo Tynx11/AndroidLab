@@ -1,6 +1,7 @@
 package com.example.tony.home;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -15,6 +16,7 @@ import android.widget.Button;
 public class MainFragment extends Fragment {
 
     private Button start;
+    private Intent intent;
 
     public static MainFragment newInstance(String str) {
 
@@ -39,10 +41,9 @@ public class MainFragment extends Fragment {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragment_container,SecondFragment.newInstance(0,0,new int[getResources().getIntArray(R.array.right_answers).length]))
-                        .commit();
+
+                Intent intent = new Intent(getActivity(), SecondActivity.class);
+                startActivity(intent);
 
             }
         });
