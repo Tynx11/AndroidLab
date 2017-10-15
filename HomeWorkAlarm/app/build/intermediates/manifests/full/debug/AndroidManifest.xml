@@ -18,14 +18,24 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+<<<<<<< HEAD:HomeWorkAlarm/app/build/intermediates/manifests/full/debug/AndroidManifest.xml
         android:theme="@style/AppTheme" >
         <activity android:name="com.example.tony.homeworkalarm.MainActivity" >
+=======
+        android:theme="@style/AppTheme">
+        <activity android:name=".splashscreen.SplashScreen">
+>>>>>>> 8124a9e0f5bb300e0a25f4f52e63baf68e397528:HomeWorkRecycler/app/src/main/AndroidManifest.xml
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD:HomeWorkAlarm/app/build/intermediates/manifests/full/debug/AndroidManifest.xml
+=======
+        <activity android:name=".screen.event_list.MainActivity"></activity>
+        <activity android:name=".screen.event_list.event_pager.EventPagerActivity"></activity>
+>>>>>>> 8124a9e0f5bb300e0a25f4f52e63baf68e397528:HomeWorkRecycler/app/src/main/AndroidManifest.xml
     </application>
 
 </manifest>
