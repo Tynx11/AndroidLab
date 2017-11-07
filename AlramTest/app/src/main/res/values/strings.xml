@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AlramTest</string>
+    <string name="menu_settings">sett</string>
+    <string name="btStart">Start</string>
+    <string name="btCancel">Cancel</string>
+    <string name="btOneTime">One Time</string>
+</resources>

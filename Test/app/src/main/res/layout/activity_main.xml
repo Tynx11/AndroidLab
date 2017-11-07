@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/real"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_height="match_parent">
+    <TimePicker
+        android:id="@+id/timePicker"
+        android:layout_width="344dp"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="6dp" />
+
+    <Button
+        android:id="@+id/alarm_on"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Пошел на хуй!"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="405dp"
+        android:layout_alignBottom="@id/timePicker"/>
+
+    <Button
+        android:id="@+id/alarm_off"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Вернись назад!"
+        tools:layout_editor_absoluteX="269dp"
+        tools:layout_editor_absoluteY="405dp"
+        android:layout_alignBottom="@id/timePicker"
+        android:layout_alignParentRight="true"/>
+
+    <TextView
+        android:layout_alignParentBottom="true"
+        android:textSize="20sp"
+        android:id="@+id/update_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="142dp"
+        tools:layout_editor_absoluteY="464dp" />
+
+</RelativeLayout>

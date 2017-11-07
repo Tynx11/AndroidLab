@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TimePicker
+        android:id="@+id/time_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    </TimePicker>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/choose_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/choose_days"
+            android:textSize="32sp" />
+
+            <CheckBox
+                android:layout_below="@id/choose_day"
+                android:id="@+id/monday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/day_0" />
+
+            <CheckBox
+                android:id="@+id/tuesday"
+                android:layout_below="@id/monday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/day_1" />
+
+            <CheckBox
+                android:layout_below="@id/tuesday"
+                android:id="@+id/wednesday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/day_2" />
+
+            <CheckBox
+                android:layout_below="@id/wednesday"
+                android:id="@+id/Thursday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/day_3" />
+
+            <CheckBox
+                android:layout_below="@id/Thursday"
+                android:id="@+id/friday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/day_4" />
+
+            <CheckBox
+                android:layout_below="@id/friday"
+                android:id="@+id/saturday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/day_5" />
+
+            <CheckBox
+                android:layout_below="@id/saturday"
+                android:id="@+id/sunday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/day_6" />
+
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/floating_action_bar1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="32dp"
+            android:src="@drawable/add_icon"/>
+    </RelativeLayout>
+</LinearLayout>
