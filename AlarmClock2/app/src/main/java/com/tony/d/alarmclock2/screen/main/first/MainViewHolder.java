@@ -3,6 +3,7 @@ package com.tony.d.alarmclock2.screen.main.first;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SwitchCompat;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
 import com.tony.d.alarmclock2.R;
@@ -21,6 +22,7 @@ class MainViewHolder extends RecyclerView.ViewHolder {
     public SwitchCompat switchCompat;
 
     public AlarmItem alarmItem;
+
 
 
 
@@ -44,6 +46,15 @@ class MainViewHolder extends RecyclerView.ViewHolder {
                 }
             }
        });
+        switchCompat.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (onItemClickListener != null){
+                    onItemClickListener.onSwitchClick(getAdapterPosition(),switchCompat, alarmItem);
+                }
+            }
+        });
+
 
 
 

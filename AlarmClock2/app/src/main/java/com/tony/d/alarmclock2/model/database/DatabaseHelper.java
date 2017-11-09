@@ -51,8 +51,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void clearAlarmItems(){
         getWritableDatabase().execSQL(AlarmItemTable.getDeleteQuery());
     }
-    public void uptadeQuery(AlarmItem alarmItem,int id) {
-        getWritableDatabase().execSQL(AlarmItemTable.updateAlarm(alarmItem, id));
+    public void uptadeQuery(AlarmItem alarmItem) {
+        getWritableDatabase().execSQL(AlarmItemTable.updateAlarm(alarmItem));
+    }
+    public void updateSwitch(AlarmItem alarmItem){
+        getWritableDatabase().execSQL(AlarmItemTable.updateSwitchAlarm(alarmItem));
+
     }
 
 

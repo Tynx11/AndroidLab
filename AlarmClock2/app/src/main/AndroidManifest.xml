@@ -17,7 +17,17 @@
             </intent-filter>
         </activity>
         <activity android:name=".screen.main.second.SecondActivity" />
-        
+        <activity
+            android:name=".screen.main.alarming.AlarmingActivity"
+            android:theme="@style/AppTheme.Transparent"></activity>
+
+        <receiver android:name="com.tony.d.alarmclock2.Alarm.AlarmReciever" android:enabled="true" >
+        </receiver>
+        <service android:name=".Alarm.RingtoneService" android:enabled="true"></service>
+
+
+
+
     </application>
 
 </manifest>

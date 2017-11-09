@@ -51,15 +51,19 @@ public class AlarmItemTable {
     }
 
     @NonNull
-    public static String updateAlarm(AlarmItem alarmItem,int id){
+    public static String updateAlarm(AlarmItem alarmItem){
         return "UPDATE " + NAME + " SET "+
                 COLUMN_TIME + " = " +"\'"+ alarmItem.getTime() + "\'" +", "+
                 COLUMN_DESCRIPTION + " = " + alarmItem.getDescription() + ", " +
                 COLUMN_SWITCH + " = " + alarmItem.isSwitchedOn() +
-                " WHERE " + COLUMN_ID + " = " + id + ";";
+                " WHERE " + COLUMN_ID + " = " + alarmItem.getIdd() + ";";
     }
    public static String getId () {return  "SELECT " + COLUMN_ID +
            " FROM " + NAME;}
+    public static String updateSwitchAlarm(AlarmItem alarmItem){
+        return "UPDATE " + NAME + " SET "+
+                COLUMN_SWITCH + " = " + alarmItem.isSwitchedOn() +
+                " WHERE " + COLUMN_ID + " = " + alarmItem.getIdd() + ";";
 
-
+    }
 }

@@ -1,5 +1,8 @@
 package com.tony.d.alarmclock2.screen.main.second;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.icu.util.Calendar;
 import android.os.Bundle;
@@ -13,6 +16,7 @@ import android.widget.RadioGroup;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.tony.d.alarmclock2.Alarm.AlarmReciever;
 import com.tony.d.alarmclock2.R;
 import com.tony.d.alarmclock2.model.database.DatabaseHelper;
 import com.tony.d.alarmclock2.model.entity.AlarmItem;
@@ -41,6 +45,9 @@ public class SecondFragment extends BaseFragment {
     private CheckBox saturday;
     private CheckBox sunday;
 
+    private AlarmManager alarmManager;
+    private PendingIntent pendingIntent;
+
     private AlarmItem alarmItem;
     private boolean request;
 
@@ -56,6 +63,7 @@ public class SecondFragment extends BaseFragment {
         super.onCreate(savedInstanceState);
 
         databaseHelper = new DatabaseHelper(getActivity());
+
     }
 
     @Nullable
@@ -92,7 +100,9 @@ public class SecondFragment extends BaseFragment {
                 String hour_string = String.valueOf(hour);
                 String minute_string = String.valueOf(minute);
 
-
+                if (hour < 10){
+                    hour_string = "0" + String.valueOf(hour);
+                }
 
                 if (minute < 10){
                     minute_string ="0" + String.valueOf(minute);
@@ -102,11 +112,15 @@ public class SecondFragment extends BaseFragment {
 
                 // TODO: 23.10.2017 если есть такой id то метод update, если его нет, то метод insert, еще нужно добавить дин.кноипку удалить.
                 if (alarmItem != null) {
-                    int id = alarmItem.getIdd();
-                    databaseHelper.uptadeQuery(new AlarmItem(time,getDays(),1, (int) (System.currentTimeMillis())),id);
+                    alarmItem.setTime(time);
+                    alarmItem.setDescription(getDays());
+                    alarmItem.setSwitchedOn(1);
+                    databaseHelper.uptadeQuery(alarmItem);
+                    //setAlarm(calendar);
                 }
                 if (alarmItem == null) {
-                    databaseHelper.insertAlarmItem(new AlarmItem(time,getDays(),1, (int) (System.currentTimeMillis())));
+                    databaseHelper.insertAlarmItem(new AlarmItem(time,getDays(),0, (int) (System.currentTimeMillis())));
+                    //setAlarm(calendar);
                 }
                 Intent intent = new Intent(getContext(),MainActivity.class);
                         //.addFlags(
@@ -139,4 +153,5 @@ public class SecondFragment extends BaseFragment {
         }
         return answer+"'";
     }
+
 }

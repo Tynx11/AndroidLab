@@ -1,5 +1,7 @@
 package com.tony.d.alarmclock2.screen.main.first;
 
+import android.support.v7.widget.SwitchCompat;
+
 import com.tony.d.alarmclock2.model.entity.AlarmItem;
 
 /**
@@ -9,6 +11,7 @@ import com.tony.d.alarmclock2.model.entity.AlarmItem;
 public interface OnItemClickListener {
 
     void onClick(int position,AlarmItem alarmItem);
+    void onSwitchClick (int position, SwitchCompat switchCompat,AlarmItem alarmItem);
 
 
 
