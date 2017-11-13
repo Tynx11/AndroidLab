@@ -18,16 +18,20 @@ import android.widget.Toast;
 
 import com.tony.d.alarmclock2.Alarm.AlarmReciever;
 import com.tony.d.alarmclock2.R;
+import com.tony.d.alarmclock2.loader.MainPresenter;
+import com.tony.d.alarmclock2.loader.MainView;
 import com.tony.d.alarmclock2.model.database.DatabaseHelper;
 import com.tony.d.alarmclock2.model.entity.AlarmItem;
 import com.tony.d.alarmclock2.screen.base.BaseFragment;
 import com.tony.d.alarmclock2.screen.main.first.MainActivity;
 
+import java.util.List;
+
 /**
  * Created by Tony on 29.10.2017.
  */
 
-public class SecondFragment extends BaseFragment {
+public class SecondFragment extends BaseFragment implements MainView {
 
     private final static String KEY = "key";
     private FloatingActionButton floatingActionButton;
@@ -50,6 +54,8 @@ public class SecondFragment extends BaseFragment {
 
     private AlarmItem alarmItem;
     private boolean request;
+    private String time;
+    private MainPresenter presenter;
 
 
     public static SecondFragment newInstance(Bundle data) {
@@ -71,7 +77,7 @@ public class SecondFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_second,container,false);
 
-        final Calendar calendar = Calendar.getInstance();
+         final java.util.Calendar calendar = java.util.Calendar.getInstance();
         timePicker = view.findViewById(R.id.time_picker);
         timePicker.setIs24HourView(true);
         radioGroup = view.findViewById(R.id.radio);
@@ -87,12 +93,14 @@ public class SecondFragment extends BaseFragment {
         saturday = view.findViewById(R.id.saturday);
         sunday = view.findViewById(R.id.sunday);
 
+        presenter = new MainPresenter(databaseHelper,getLoaderManager(),getActivity(),this);
+
 
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                calendar.set(Calendar.HOUR_OF_DAY,timePicker.getHour());
-                calendar.set(Calendar.MINUTE,timePicker.getMinute());
+                calendar.set(java.util.Calendar.HOUR_OF_DAY,timePicker.getHour());
+                calendar.set(java.util.Calendar.MINUTE,timePicker.getMinute());
 
                 int hour = timePicker.getHour();
                 int minute = timePicker.getMinute();
@@ -108,24 +116,22 @@ public class SecondFragment extends BaseFragment {
                     minute_string ="0" + String.valueOf(minute);
                 }
 
-                String time = hour_string+":"+minute_string;
+                time = hour_string+":"+minute_string;
 
                 // TODO: 23.10.2017 если есть такой id то метод update, если его нет, то метод insert, еще нужно добавить дин.кноипку удалить.
                 if (alarmItem != null) {
                     alarmItem.setTime(time);
                     alarmItem.setDescription(getDays());
                     alarmItem.setSwitchedOn(1);
-                    databaseHelper.uptadeQuery(alarmItem);
-                    //setAlarm(calendar);
+                    presenter.updateQuery(alarmItem);
+
                 }
                 if (alarmItem == null) {
-                    databaseHelper.insertAlarmItem(new AlarmItem(time,getDays(),0, (int) (System.currentTimeMillis())));
-                    //setAlarm(calendar);
+                    presenter.insertAlarmItems(time,getDays());
+
                 }
                 Intent intent = new Intent(getContext(),MainActivity.class);
-                        //.addFlags(
-                        //Intent.FLAG_ACTIVITY_CLEAR_TASK).addFlags(
-                        //Intent.FLAG_ACTIVITY_NEW_TASK);
+
                 startActivity(intent);
             }
         });
@@ -134,24 +140,30 @@ public class SecondFragment extends BaseFragment {
     }
 
 
-    private String getDays(){
+    public String getDays(){
         String answer = "'";
         if (monday.isChecked()){
-            answer += monday.getText()+", ";
+            answer += monday.getText()+" ";
         }if (tuesday.isChecked()){
-            answer += tuesday.getText()+", ";
+            answer += tuesday.getText()+" ";
         }if (wednesday.isChecked()){
-            answer += wednesday.getText()+", ";
+            answer += wednesday.getText()+" ";
         }if (thursday.isChecked()){
-            answer += thursday.getText()+", ";
+            answer += thursday.getText()+" ";
         }if (friday.isChecked()){
-            answer += friday.getText()+", ";
+            answer += friday.getText()+" ";
         }if (saturday.isChecked()){
-            answer += saturday.getText()+", ";
+            answer += saturday.getText()+" ";
         }if (sunday.isChecked()){
-            answer += sunday.getText()+", ";
+            answer += sunday.getText()+"";
         }
         return answer+"'";
     }
 
+
+
+    @Override
+    public void onPersonsLoaded(List<AlarmItem> alarmItems) {
+
+    }
 }

@@ -30,10 +30,12 @@
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/floating_action_bar"
-        android:src="@drawable/add_icon"
-        android:layout_gravity="bottom|right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="32dp" />
+        android:layout_gravity="bottom|right"
+        android:layout_marginRight="32dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/addbutton"
+        app:backgroundTint="@color/colorAccent" />
 
 </android.support.design.widget.CoordinatorLayout>

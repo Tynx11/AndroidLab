@@ -24,12 +24,10 @@ public class RingtoneService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         int value = intent.getIntExtra("key",1);
-
         if (value == 1 ) {
             mediaPlayer = MediaPlayer.create(this, R.raw.alarm);
-            if(!mediaPlayer.isPlaying()) {
                 mediaPlayer.start();
-            }
+
         }
         else  {
             mediaPlayer.stop();

@@ -26,7 +26,6 @@ public class AlarmReciever extends BroadcastReceiver {
         serviceIntent.putExtra("key",1);
         context.startService(serviceIntent);
 
-                Toast.makeText(context, "Сука я сделал будильник", Toast.LENGTH_LONG).show();
                 Intent intentone = new Intent(context.getApplicationContext(), AlarmingActivity.class)
                         .addFlags(
                                 Intent.FLAG_ACTIVITY_CLEAR_TASK).addFlags(

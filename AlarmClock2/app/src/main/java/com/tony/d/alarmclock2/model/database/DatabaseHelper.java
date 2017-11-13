@@ -18,7 +18,7 @@ import java.util.List;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    public static final String NAME = "data.dbb";
+    public static final String NAME = "data.db";
 
     public static int VERSION = 1;
 
@@ -56,6 +56,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
     public void updateSwitch(AlarmItem alarmItem){
         getWritableDatabase().execSQL(AlarmItemTable.updateSwitchAlarm(alarmItem));
+
+    }
+
+    @NonNull
+    public Cursor selectAlarmItemsCursor(){
+        return getReadableDatabase().rawQuery(AlarmItemTable.getSelectQuery(), null);
 
     }
 
